@@ -6,6 +6,7 @@ import {useAuthStore} from "@/app/stores/authStore.ts";
 
 export const useEntityStore = defineStore(Stores.ENTITY, () => {
     const authStore = useAuthStore()
+    const isEntityLoading = ref<boolean>(false)
 
     const entities = ref<Entity[]>([])
     const types = [{
@@ -28,6 +29,7 @@ export const useEntityStore = defineStore(Stores.ENTITY, () => {
     }
 
     const onCreateEntity = async () => {
+        isEntityLoading.value = true
         const data = await createEntity({type: currentType.value.value, base_domain: authStore.baseDomain})
         const newEntities = data.data._embedded[currentType.value.value]
         console.log(data.data._embedded)
@@ -37,14 +39,14 @@ export const useEntityStore = defineStore(Stores.ENTITY, () => {
             entities.value.push(fetchedEntity.data)
             console.log(entities.value)
         }
-
+        isEntityLoading.value = false
     }
-    onMounted(async () => await onCreateEntity())
 
     return  {
         entities,
         onGetEntity,
         onCreateEntity,
+        isEntityLoading,
         currentType,
         types
     }
