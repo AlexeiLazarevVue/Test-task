@@ -4,9 +4,9 @@ import {onMounted, ref} from "vue";
 import {createEntity, type Entity, getEntities, getEntity} from "@/entities";
 import {useAuthStore} from "@/app/stores/authStore.ts";
 
-const authStore = useAuthStore()
-
 export const useEntityStore = defineStore(Stores.ENTITY, () => {
+    const authStore = useAuthStore()
+
     const entities = ref<Entity[]>([])
     const types = [{
         title: 'Сделки',

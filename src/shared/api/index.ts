@@ -6,7 +6,7 @@ export const baseApi = (base_domain) => {
     return axios.create({
         baseURL: config.baseURL(base_domain) + '/api/v4/',
         headers: {
-            Authorization: `Bearer ${useAuthStore().token}`,
+            Authorization: `Bearer ${localStorage.getItem('token')}`,
             'Content-Type': 'application/json'
         }
     })
@@ -15,7 +15,7 @@ export const authApi = (base_domain) => {
     return axios.create({
         baseURL: config.baseURL(base_domain) + '/oauth2/access_token/',
         headers: {
-            Authorization: `${useAuthStore().token}`,
+            Authorization: `${localStorage.getItem('token')}`,
             'Content-Type': 'application/json'
         }
     })

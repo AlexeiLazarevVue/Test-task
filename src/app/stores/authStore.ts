@@ -11,6 +11,7 @@ export const useAuthStore = defineStore(Stores.AUTH, () => {
         const { data } = await getUserToken()
         token.value = data.access_token
         baseDomain.value = data.base_domain
+        localStorage.setItem('token', token.value)
     }
 
     return {
