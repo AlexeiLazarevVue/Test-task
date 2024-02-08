@@ -1,11 +1,13 @@
 import {defineStore} from "pinia";
 import {Stores} from "@/shared";
-import {ref} from "vue";
-import {createEntity} from "@/entities";
+import {onMounted, ref} from "vue";
+import {createEntity, type Entity, getEntities, getEntity} from "@/entities";
 import {useAuthStore} from "@/app/stores/authStore.ts";
 
+const authStore = useAuthStore()
+
 export const useEntityStore = defineStore(Stores.ENTITY, () => {
-    const entities = ref([])
+    const entities = ref<Entity[]>([])
     const types = [{
         title: 'Сделки',
         value: 'leads'
@@ -19,17 +21,29 @@ export const useEntityStore = defineStore(Stores.ENTITY, () => {
             value: 'contacts'
         }]
     const currentType = ref(types[0])
-    const onGetEntities = () => {
+    const onGetEntity = async (id: number) => {
+      const entity = await getEntity({type: currentType.value.value, base_domain: authStore.baseDomain, id})
 
+        return entity
     }
 
     const onCreateEntity = async () => {
-        await createEntity({type: currentType.value.value, base_domain: useAuthStore().baseDomain})
+        const data = await createEntity({type: currentType.value.value, base_domain: authStore.baseDomain})
+        const newEntities = data.data._embedded[currentType.value.value]
+        console.log(data.data._embedded)
+
+        for (const entity of newEntities) {
+            const fetchedEntity = await onGetEntity(entity.id)
+            entities.value.push(fetchedEntity.data)
+            console.log(entities.value)
+        }
+
     }
+    onMounted(async () => await onCreateEntity())
 
     return  {
         entities,
-        onGetEntities,
+        onGetEntity,
         onCreateEntity,
         currentType,
         types

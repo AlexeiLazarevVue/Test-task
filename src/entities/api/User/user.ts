@@ -1,5 +1,5 @@
 import {AxiosResponse} from "axios";
-import {genesisApi} from "@/shared";
+import {authApi, genesisApi} from "@/shared";
 
 export const getUserToken = async (data: UserAPI.GET.GetToken.Params) : UserAPI.GET.GetToken.Response => {
     return await genesisApi.get()

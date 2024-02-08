@@ -1,6 +1,7 @@
 <template>
-    <div>
-      <router-view></router-view>
+    <div class="container">
+        <sidebar-component></sidebar-component>
+        <router-view></router-view>
     </div>
 </template>
 
@@ -8,6 +9,7 @@
 
 import {onMounted} from "vue";
 import {useAuthStore} from "@/app/stores/authStore.ts";
+import {Sidebar as SidebarComponent} from "@/app/layout";
 
 const {onGetUserToken, token} = useAuthStore()
 

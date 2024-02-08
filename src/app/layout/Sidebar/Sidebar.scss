@@ -1,0 +1,4 @@
+.sidebar {
+  @include column(toRem(20));
+  padding: toRem(30);
+}
