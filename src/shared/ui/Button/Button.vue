@@ -6,8 +6,7 @@
 </template>
 
 <script setup lang="ts">
-
-import {computed} from "vue";
+import { computed } from 'vue'
 
 type ButtonProps = {
     isActive: boolean
@@ -15,12 +14,10 @@ type ButtonProps = {
 }
 const props = withDefaults(defineProps<ButtonProps>(), {
     isActive: true,
-    isLoading: false
+    isLoading: false,
 })
 
 const loading = computed(() => props.isLoading)
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

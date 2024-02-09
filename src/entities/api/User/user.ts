@@ -1,8 +1,10 @@
-import {AxiosResponse} from "axios";
-import {authApi, genesisApi} from "@/shared";
+import { AxiosResponse } from 'axios'
+import { authApi } from '@/shared'
 
-export const getUserToken = async (data: UserAPI.GET.GetToken.Params) : UserAPI.GET.GetToken.Response => {
-    return await genesisApi.get()
+export const getUserToken = async (
+    data: UserAPI.GET.GetToken.Params,
+): UserAPI.GET.GetToken.Response => {
+    return await authApi().get('/token')
 }
 
 export namespace UserAPI {

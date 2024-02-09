@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "format": "prettier --write src/"
   },
   "dependencies": {
     "@types/node": "^20.11.16",
@@ -19,6 +20,7 @@
   "devDependencies": {
     "@rollup/plugin-alias": "^5.1.0",
     "@vitejs/plugin-vue": "^4.5.2",
+    "prettier": "3.2.5",
     "sass": "^1.70.0",
     "typescript": "^5.2.2",
     "vite": "^5.0.8",

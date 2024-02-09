@@ -1,3 +1,3 @@
-import EntityList from "./EntityList.vue";
+import EntityList from './EntityList.vue'
 
 export { EntityList }

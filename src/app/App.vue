@@ -8,12 +8,11 @@
 </template>
 
 <script setup lang="ts">
+import { onMounted } from 'vue'
+import { useAuthStore } from '@/app/stores/authStore.ts'
+import { Sidebar as SidebarComponent } from '@/app/layout'
 
-import {onMounted} from "vue";
-import {useAuthStore} from "@/app/stores/authStore.ts";
-import {Sidebar as SidebarComponent} from "@/app/layout";
-
-const {onGetUserToken, token} = useAuthStore()
+const { onGetUserToken, token } = useAuthStore()
 
 onMounted(() => {
     onGetUserToken()
@@ -22,6 +21,4 @@ onMounted(() => {
 console.log(token)
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

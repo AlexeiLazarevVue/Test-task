@@ -1,38 +1,38 @@
 .button {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  padding: toRem(8) toRem(16);
-  border: none;
-  cursor: pointer;
-  color: #fff;
-  font-weight: 800;
-  border-radius: $smallRadius;
-  transition: 0.3s;
-
-  .loader {
+    position: relative;
     display: flex;
     justify-content: center;
-    height: toRem(14);
+    padding: toRem(8) toRem(16);
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    font-weight: 800;
+    border-radius: $smallRadius;
     transition: 0.3s;
-    &::after {
-      content: '';
-      position: absolute;
-      height: toRem(15);
-      width: toRem(15);
-      border: toRem(3) solid #3d3d3d;
-      border-top-color: #fff;
-      border-radius: 100%;
-      animation: 1s loading linear infinite;
+
+    .loader {
+        display: flex;
+        justify-content: center;
+        height: toRem(14);
+        transition: 0.3s;
+        &::after {
+            content: '';
+            position: absolute;
+            height: toRem(15);
+            width: toRem(15);
+            border: toRem(3) solid #3d3d3d;
+            border-top-color: #fff;
+            border-radius: 100%;
+            animation: 1s loading linear infinite;
+        }
     }
-  }
-  &:hover {
-    background: #3b6bba;
-  }
-  &_active {
-    background: #4c8bf7;
-  }
-  &_inactive {
-    background: #fcfcfc;
-  }
+    &:hover {
+        background: #3b6bba;
+    }
+    &_active {
+        background: #4c8bf7;
+    }
+    &_inactive {
+        background: #fcfcfc;
+    }
 }

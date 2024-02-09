@@ -1,7 +1,7 @@
 .container {
-  @include row(0);
+    @include row(0);
 }
 .content {
-  display: flex;
-  padding: toRem(30);
+    display: flex;
+    padding: toRem(30);
 }

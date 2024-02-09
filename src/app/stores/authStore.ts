@@ -1,7 +1,7 @@
-import {defineStore} from "pinia";
-import {Stores} from "@/shared";
-import {onMounted, ref} from "vue";
-import {getUserToken} from "@/entities";
+import { defineStore } from 'pinia'
+import { Stores } from '@/shared'
+import { onMounted, ref } from 'vue'
+import { getUserToken } from '@/entities'
 
 export const useAuthStore = defineStore(Stores.AUTH, () => {
     const token = ref<string>()
@@ -12,11 +12,12 @@ export const useAuthStore = defineStore(Stores.AUTH, () => {
         token.value = data.access_token
         baseDomain.value = data.base_domain
         localStorage.setItem('token', token.value)
+        localStorage.setItem('baseDomain', baseDomain.value)
     }
 
     return {
         token,
         baseDomain,
-        onGetUserToken
+        onGetUserToken,
     }
 })

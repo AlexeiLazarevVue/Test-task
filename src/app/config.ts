@@ -1,10 +1,7 @@
-const host = (base_url: string) => `https://${base_url}`
-const genesis = 'https://test.gnzs.ru/oauth/get-token.php'
-const x_client_id = 31550986
+const host = `http://localhost:3000/`
 
 export default {
     host,
-    baseURL: (base_url) => host(base_url),
-    x_client_id,
-    genesis
+    baseURL: host + 'api/',
+    authURL: host + 'auth/',
 }

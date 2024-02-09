@@ -1,9 +1,9 @@
-@import "utils/reset";
-@import "utils/variables/colors";
-@import "./utils/mixins";
-@import "./utils/functions";
-@import "./utils/common";
-@import "./utils/animations";
-@import "./utils/variables/radius";
+@import 'utils/reset';
+@import 'utils/variables/colors';
+@import './utils/mixins';
+@import './utils/functions';
+@import './utils/common';
+@import './utils/animations';
+@import './utils/variables/radius';
 @import '../../shared/shared';
-@import "../layout/layout";
+@import '../layout/layout';

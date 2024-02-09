@@ -1,3 +1,3 @@
-import {Stores} from "./stores.ts";
+import { Stores } from './stores.ts'
 
-export {Stores}
+export { Stores }

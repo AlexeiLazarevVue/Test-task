@@ -1,10 +1,10 @@
 import { createApp } from 'vue'
 import './styles/index.scss'
 import App from './App.vue'
-import {createPinia} from "pinia";
-import {Button, Dropdown} from "@/shared";
-import router from "./router";
-import {clickOutside} from "@/app/directives/clickOutside.ts";
+import { createPinia } from 'pinia'
+import { Button, Dropdown } from '@/shared'
+import router from './router'
+import { clickOutside } from '@/app/directives/clickOutside.ts'
 
 const app = createApp(App)
 

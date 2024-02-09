@@ -1,32 +1,32 @@
 //** * Modern CSS Reset Tweaks * ================================================== */
 html {
-  -webkit-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
 
-  &:focus-within {
-    scroll-behavior: smooth;
-  }
+    &:focus-within {
+        scroll-behavior: smooth;
+    }
 }
 
 * {
-  padding: 0;
-  margin: 0;
+    padding: 0;
+    margin: 0;
 }
 
 body {
-  text-size-adjust: 100%;
-  position: relative;
+    text-size-adjust: 100%;
+    position: relative;
 
-  width: 100%;
-  min-height: 100vh;
+    width: 100%;
+    min-height: 100vh;
 
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeSpeed;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeSpeed;
 }
 
 /* Box sizing normalization */
 *,
 ::after,
 ::before {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }

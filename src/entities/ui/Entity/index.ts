@@ -1,3 +1,3 @@
-import Entity from "./Entity.vue";
+import Entity from './Entity.vue'
 
-export {Entity}
+export { Entity }
