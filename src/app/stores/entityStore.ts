@@ -11,6 +11,10 @@ export const useEntityStore = defineStore(Stores.ENTITY, () => {
     const entities = ref<Entity[]>([])
     const types = [
         {
+            title: 'Не указано',
+            value: '',
+        },
+        {
             title: 'Сделки',
             value: 'leads',
         },

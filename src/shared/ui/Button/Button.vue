@@ -1,5 +1,5 @@
 <template>
-    <button :class="`button button_${isActive ? 'active' : 'inactive'}`">
+    <button :class="`button button_${isActive ? 'active' : 'inactive'}`" :disabled="!isActive">
         <slot v-if="!loading"></slot>
         <span class="loader" v-else></span>
     </button>

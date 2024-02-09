@@ -5,7 +5,7 @@
             v-model="type"
             :options="types"
         ></dropdown-component>
-        <button-component :is-loading="loading" @click="onCreateEntity"
+        <button-component :is-loading="loading" :is-active="isTypeSelected" @click="onCreateEntity"
             >Создать</button-component
         >
     </div>
@@ -20,6 +20,7 @@ const { currentType, isEntityLoading } = storeToRefs(useEntityStore())
 const { types, onCreateEntity } = useEntityStore()
 
 const loading = computed(() => isEntityLoading.value)
+const isTypeSelected = computed(() => !!currentType.value.value)
 
 const onOptionChange = value => {
     currentType.value = value

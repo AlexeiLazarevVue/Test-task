@@ -4,11 +4,20 @@
     justify-content: center;
     padding: toRem(8) toRem(16);
     border: none;
+    background: var(--primary-color);
     cursor: pointer;
-    color: #fff;
+    color: var(--white);
     font-weight: 800;
     border-radius: $smallRadius;
     transition: 0.3s;
+    &:disabled {
+        background: var(--light-grey);
+        border: toRem(2) solid var(--grey);
+        color: var(--black);
+        &:hover {
+            background: var(--grey);
+        }
+    }
 
     .loader {
         display: flex;
@@ -20,19 +29,13 @@
             position: absolute;
             height: toRem(15);
             width: toRem(15);
-            border: toRem(3) solid #3d3d3d;
-            border-top-color: #fff;
+            border: toRem(3) solid var(--dark-grey);
+            border-top-color: var(--white);
             border-radius: 100%;
             animation: 1s loading linear infinite;
         }
     }
     &:hover {
-        background: #3b6bba;
-    }
-    &_active {
-        background: #4c8bf7;
-    }
-    &_inactive {
-        background: #fcfcfc;
+        background: var(--primary-dark-color);
     }
 }

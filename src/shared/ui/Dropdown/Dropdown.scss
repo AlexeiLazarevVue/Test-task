@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     position: relative;
-    background: #f9f9f9;
+    background: var(--light-grey);
     cursor: pointer;
 
     &__current-option {
@@ -11,10 +11,10 @@
         text-align: center;
         padding: toRem(5) toRem(30);
         font-size: toRem(13);
-        color: var(--brand-main);
+        color: var(--black);
         border: none;
         border-radius: $smallRadius;
-        box-shadow: #c5c5c5 0px 2px 3px 3px;
+        box-shadow: var(--grey) 0 toRem(1) toRem(3) toRem(3);
     }
 
     &__options {
@@ -25,7 +25,7 @@
         border-radius: $smallRadius;
         background: #fff;
         overflow: hidden;
-        border: toRem(1) solid var(--grey-border);
+        border: toRem(1) solid var(--light-grey);
         list-style-type: none;
         box-shadow:
             0 0 toRem(32) 0 rgba(0, 0, 0, 0.08),
@@ -37,10 +37,10 @@
         width: 100%;
         padding: toRem(5) toRem(30);
         text-align: center;
-        color: var(--dark-main);
-        transition: background-color 0.3s ease;
+        color: var(--dark-grey);
+        transition: 0.3s ease;
         &:hover {
-            background-color: #e3e3e3;
+            background-color: var(--light-grey);
         }
     }
 }
