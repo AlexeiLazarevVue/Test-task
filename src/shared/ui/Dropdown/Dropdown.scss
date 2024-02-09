@@ -2,6 +2,7 @@
     display: flex;
     align-items: center;
     position: relative;
+    background: #f9f9f9;
     cursor: pointer;
 
     &__current-option {
@@ -13,7 +14,7 @@
         color: var(--brand-main);
         border: none;
         border-radius: $smallRadius;
-        box-shadow: #707070 1px 1px 1px 1px;
+        box-shadow: #c5c5c5 0px 2px 3px 3px;
     }
 
     &__options {
@@ -38,7 +39,6 @@
         text-align: center;
         color: var(--dark-main);
         transition: background-color 0.3s ease;
-        border-radius: $smallRadius;
         &:hover {
             background-color: #e3e3e3;
         }

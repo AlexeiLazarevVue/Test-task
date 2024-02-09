@@ -23,7 +23,7 @@ export const useEntityStore = defineStore(Stores.ENTITY, () => {
         }]
     const currentType = ref(types[0])
     const onGetEntity = async (id: number) => {
-      const entity = await getEntity({type: currentType.value.value, base_domain: authStore.baseDomain, id})
+        const entity = await getEntity({type: currentType.value.value, base_domain: authStore.baseDomain, id})
 
         return entity
     }
@@ -42,7 +42,7 @@ export const useEntityStore = defineStore(Stores.ENTITY, () => {
         isEntityLoading.value = false
     }
 
-    return  {
+    return {
         entities,
         onGetEntity,
         onCreateEntity,

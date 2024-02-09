@@ -1,8 +1,9 @@
 <template>
     <div class="container">
         <sidebar-component></sidebar-component>
-        <main class="content"></main>
-        <router-view></router-view>
+        <main class="content">
+            <router-view></router-view>
+        </main>
     </div>
 </template>
 

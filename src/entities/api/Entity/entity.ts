@@ -7,7 +7,7 @@ export const getEntity = async (data: EntityAPI.GET.GetEntity.Params) : EntityAP
 
 export const createEntity = async (data: EntityAPI.POST.CreateEntity.Params) : EntityAPI.GET.GetEntities.Response => {
   return await baseApi(data.base_domain).post(`/${data.type}`, [{
-      name: 'dsds'
+      name: data.type
   }])
 }
 

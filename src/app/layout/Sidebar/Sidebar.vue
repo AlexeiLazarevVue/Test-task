@@ -1,6 +1,6 @@
 <template>
     <div class="sidebar">
-        <dropdown-component @onOptionChange="onOptionChange" v-model="currentType" :options="types"></dropdown-component>
+        <dropdown-component @onOptionChange="onOptionChange" v-model="type" :options="types"></dropdown-component>
         <button-component :is-loading="loading" @click="onCreateEntity">Создать</button-component>
     </div>
 </template>
@@ -14,6 +14,10 @@ const { currentType, isEntityLoading } = storeToRefs(useEntityStore())
 const {types, onCreateEntity} = useEntityStore()
 
 const loading = computed(() => isEntityLoading.value)
+
+const onOptionChange = (value) => {
+    currentType.value = value
+}
 </script>
 
 <style scoped>
